@@ -30,10 +30,6 @@ Due to ungoing problems with the Codalab evaluation server we have decided to re
 1. Download the [dataset](https://lmb.informatik.uni-freiburg.de/data/freihand/FreiHAND_pub_v2.zip). See project page for further instructions.
 
 2. Install basic requirements:
-   - PIP Requirements. Install individually.
-    ```
-    pip install [virtualenv], [numpy], [matplotlib], [scipy], [scikit-image], [transforms3d], [tqdm], [opencv-python==3.4.0.14], [cython]
-    ```
    - Create/Activate Virtual Environment
     ```
     mkdir venv
@@ -41,6 +37,10 @@ Due to ungoing problems with the Codalab evaluation server we have decided to re
     virtualenv -p python2.7 ./venv
     activate
     cd ../..
+    ```
+    - PIP Requirements. Install individually.
+    ```
+    pip install [virtualenv], [numpy], [matplotlib], [scipy], [scikit-image], [transforms3d], [tqdm], [opencv-python==3.4.0.14], [cython]
     ```
     - Deactivate the Virtual Environment at anytime by executing:
     ```
