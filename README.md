@@ -30,19 +30,21 @@ Due to ungoing problems with the Codalab evaluation server we have decided to re
 1. Download the [dataset](https://lmb.informatik.uni-freiburg.de/data/freihand/FreiHAND_pub_v2.zip). See project page for further instructions.
 
 2. Install basic requirements:
+   - PIP install Virtual Environment
+   ```
+   pip install virtualenv
+   ```
    - Create/Activate Virtual Environment
     ```
     mkdir venv
     virtualenv -p python2.7 ./venv
-    cd venv/Scripts
-    activate
-    cd ../..
+    source venv/bin/activate
     ```
     - PIP Requirements. Install individually.
     ```
-    pip install [virtualenv], [numpy], [matplotlib], [scipy], [scikit-image], [transforms3d], [tqdm], [opencv-python==3.4.0.14], [cython]
+    pip install [numpy], [matplotlib], [scipy], [scikit-image], [transforms3d], [tqdm], [opencv-python==3.4.0.14], [cython]
     ```
-    - Deactivate the Virtual Environment at anytime by executing:
+    - (Optional) Deactivate the Virtual Environment at anytime by executing:
     ```
     deactivate
     ```
@@ -69,7 +71,7 @@ The script provides a couple of other parameters you might want to try. Note tha
 
 3. PIP requirements. Install individually.
     ```
-    pip install [pyopengl], [bottleneck==1.2.1] [opendr==0.76]
+    pip install [pyopengl], [bottleneck==1.2.1] [opendr==0.75] [chumpy]
     ```
     
 4. Visualize samples with rendered MANO shapes
