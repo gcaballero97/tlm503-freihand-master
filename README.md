@@ -33,8 +33,8 @@ Due to ungoing problems with the Codalab evaluation server we have decided to re
    - Create/Activate Virtual Environment
     ```
     mkdir venv
-    cd venv/Scripts
     virtualenv -p python2.7 ./venv
+    cd venv/Scripts
     activate
     cd ../..
     ```
