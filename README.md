@@ -32,27 +32,27 @@ Due to ungoing problems with the Codalab evaluation server we have decided to re
 2. Install basic requirements:
    - PIP Requirements. Install individually.
     ```
-    	pip install [virtualenv], [numpy], [matplotlib], [scipy], [scikit-image], [transforms3d], [tqdm], [opencv-python==3.4.0.14], [cython]
+    pip install [virtualenv], [numpy], [matplotlib], [scipy], [scikit-image], [transforms3d], [tqdm], [opencv-python==3.4.0.14], [cython]
     ```
    - Create/Activate Virtual Environment
     ```
-    	mkdir venv
-	cd venv/Scripts
-	virtualenv -p python2.7 ./venv
-	activate
-	cd ../..
+    mkdir venv
+    cd venv/Scripts
+    virtualenv -p python2.7 ./venv
+    activate
+    cd ../..
     ```
     - Deactivate the Virtual Environment at anytime by executing:
     ```
-    	deactivate
+    deactivate
     ```
     
 3. Assuming ${DB_PATH} is the path to where you unpacked the dataset (path to where _./training/_ and _./evaluation/_ folder branch off). 
 This should enable you to run the following to show some dataset samples.
 In my case ${DB_PATH} holds the value `~/FreiHAND_pub_v2/`
     ```
-    	python view_samples.py ${DB_PATH}
-    	python view_samples.py ${DB_PATH} --show_eval 
+    python view_samples.py ${DB_PATH}
+    python view_samples.py ${DB_PATH} --show_eval 
     ```
     
 The script provides a couple of other parameters you might want to try. Note that for visualization of the hand shape you need to follow the **Advanced setup**.
@@ -64,17 +64,17 @@ The script provides a couple of other parameters you might want to try. Note tha
     
 2. Assuming ${MANO_PATH} contains the path to where you unpacked the downloaded archive use the provided script to enable visualization of the hand shape fit. See the section __Mano version__ for a known caveat.
     ```
-    	python setup_mano.py ${MANO_PATH}
+    python setup_mano.py ${MANO_PATH}
     ```
 
-3. Install PIP requirements 
+3. PIP requirements. Install individually.
     ```
-    	pip install [pyopengl], [bottleneck==1.2.1] [opendr==0.76]
+    pip install [pyopengl], [bottleneck==1.2.1] [opendr==0.76]
     ```
     
 4. Visualize samples with rendered MANO shapes
     ```
-    	python view_samples.py ${DB_PATH} --mano
+    python view_samples.py ${DB_PATH} --mano
     ```
     
     
@@ -86,24 +86,24 @@ In order to ensure a fair and consistent protocol, evaluation of your algorithm 
  
 1. Make predictions for the evaluation dataset. The code provided here predicts zeros for all joints and vertices.
     ```
-    	python pred.py ${DB_PATH}
+    python pred.py ${DB_PATH}
     ```
      
 2. Zip the `pred.json` file
     ```
-    	zip -j pred.zip pred.json
+    zip -j pred.zip pred.json
     ```
     
 3. Upload `pred.zip` to our [Codalab competition](https://competitions.codalab.org/competitions/21238) website (Participate -> Submit)
 
 4. Wait for the evaluation server to report back your results and publish your results to the leaderboard. The zero predictor will give you the following results
     ```
-    	Keypoint error 70.79cm
-    	Keypoint error aligned 4.73cm
-    	Mesh error 70.84cm
-    	Mesh error aligned 5.07cm
-    	F@5mm=0.0, F@15mm=0.0
-    	F_aliged@5mm= 0.001, F_aligned@15mm=0.031
+    Keypoint error 70.79cm
+    Keypoint error aligned 4.73cm
+    Mesh error 70.84cm
+    Mesh error aligned 5.07cm
+    F@5mm=0.0, F@15mm=0.0
+    F_aliged@5mm= 0.001, F_aligned@15mm=0.031
     ```
     
 5. Modify `pred.py` to use your method for making shape prediction and see how well it performs compared to the baselines in our [leaderboard](https://competitions.codalab.org/competitions/21238#results).
@@ -127,11 +127,11 @@ This dataset is provided for research purposes only and without any warranty. An
 If you use the dataset or parts of it in your research, you must cite the respective paper.
 
     ```
-	@InProceedings{Freihand2019,
-	  author    = {Christian Zimmermann, Duygu Ceylan, Jimei Yang, Bryan Russel, Max Argus and Thomas Brox},
-	  title     = {FreiHAND: A Dataset for Markerless Capture of Hand Pose and Shape from Single RGB Images},
-	  booktitle    = {IEEE International Conference on Computer Vision (ICCV)},
-	  year      = {2019},
-	  url          = {"https://lmb.informatik.uni-freiburg.de/projects/freihand/"}
-	}
+    @InProceedings{Freihand2019,
+    author    = {Christian Zimmermann, Duygu Ceylan, Jimei Yang, Bryan Russel, Max Argus and Thomas Brox},
+    title     = {FreiHAND: A Dataset for Markerless Capture of Hand Pose and Shape from Single RGB Images},
+    booktitle    = {IEEE International Conference on Computer Vision (ICCV)},
+    year      = {2019},
+    url          = {"https://lmb.informatik.uni-freiburg.de/projects/freihand/"}
+    }
     ```
